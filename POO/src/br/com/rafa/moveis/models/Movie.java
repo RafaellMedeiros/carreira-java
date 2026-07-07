@@ -1,6 +1,8 @@
 package br.com.rafa.moveis.models;
 
-public class Movie extends Title {
+import br.com.rafa.moveis.interfaces.Subtitled;
+
+public class Movie extends Title implements Subtitled {
 
     private String director;
 
@@ -10,5 +12,15 @@ public class Movie extends Title {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    @Override
+    public boolean isSubtitled() {
+        return false;
+    }
+
+    @Override
+    public String getLanguage() {
+        return "";
     }
 }
