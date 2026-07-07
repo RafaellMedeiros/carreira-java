@@ -1,8 +1,17 @@
 package br.com.rafa.moveis.models;
 
+import br.com.rafa.moveis.interfaces.Language;
 import br.com.rafa.moveis.interfaces.Subtitled;
 
+import java.util.Objects;
+
 public class Movie extends Title implements Subtitled {
+
+    Language language;
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
 
     private String director;
 
@@ -16,11 +25,11 @@ public class Movie extends Title implements Subtitled {
 
     @Override
     public boolean isSubtitled() {
-        return false;
+        return !Objects.equals(language.toString(), "");
     }
 
     @Override
-    public String getLanguage() {
-        return "";
+    public Language getLanguage() {
+        return language;
     }
 }
