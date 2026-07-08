@@ -11,6 +11,7 @@ public class Main {
         matrix.setDurationInMinutes(135);
         matrix.setYear(1999);
         matrix.setAvailableInPlan(true);
+        matrix.setLanguage(Language.ES);
 
         Movie johnWick = new Movie();
         johnWick.setName("John Wick");
@@ -35,8 +36,11 @@ public class Main {
 
         System.out.println(calculator.getTotalTime());
 
-        View view = new View(johnWick);
-        view.showTitle();
+        View view = new View();
+        view.addTitle(johnWick);
+        view.addTitle(laCasaDePapel);
+        view.addTitle(matrix);
+        view.showTitles();
 
     }
 }
