@@ -7,6 +7,13 @@ import java.util.Objects;
 
 public class Movie extends Title implements Subtitled {
 
+    public Movie() {
+    }
+
+    public Movie(TitleOmdb myTitleOmdb) {
+        super(myTitleOmdb);
+    }
+
     Language language;
 
     public void setLanguage(Language language) {

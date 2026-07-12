@@ -8,6 +8,15 @@ public class Title {
     private boolean isAvailableInPlan;
     private double totalRating;
 
+    public Title() {
+    }
+
+    public Title(TitleOmdb myTitleOmdb) {
+        this.name = myTitleOmdb.title();
+        this.year = Integer.parseInt(myTitleOmdb.year());
+        this.durationInMinutes = Integer.parseInt(myTitleOmdb.runtime().substring(0,2));
+    }
+
     public void setAvailableInPlan(boolean availableInPlan) {
         isAvailableInPlan = availableInPlan;
     }
@@ -64,5 +73,10 @@ public class Title {
             return 0;
         }
         return totalRating / ratingCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Title{" + "noma=" + name + ", ano="  + year + ", duration=" + durationInMinutes + ", rating=" + ratingCount + '}';
     }
 }
